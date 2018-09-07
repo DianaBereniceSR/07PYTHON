@@ -1,3 +1,39 @@
+#INTEGER
+C=34
+B=76
+Print(a+b)
+Print(a/b)
+Print(a//b) si queremos que el número sea siempre entero
+
+#FLOAT
+F=23.98
+P=45.32
+Print(f*p)
+
+#BOOLEAN
+T=True
+F=False
+
+#LISTAS (ARRAYS)
+Lista=[54,12,67,23]
+Print(lista)
+#para agregar elementos a la lista
+Lista.append(65)
+#para insertar
+Lista.isert(0,7) 
+#en el anterior comando el 0 es la posición donde deseas agregar el elemento, el segundo es el elemento
+##para imprimir solo un elemento
+Print(lista[0])
+Print(lista[2])
+
+##para borrar
+ del(l[1]) 
+#dices la posición
+
+#metodos de ordenamiento
+Lista.sort() # ordenara pero alterara los valores de l
+print(sorted(lista)) 
+
 
 
 #TUPLAS
