@@ -53,7 +53,7 @@ print(sorted(lista))
 #DISCCIONARIOS (DICT)
 #compuesto por un valor clave y uno nominal //1 id y //2 variable o valor
 #lista y diccionario son mutables
-#d={1:2, "abc":34,2:"item", "d":"ch", "li":[1,2,3],"dic":{11:23}}	
+#d={1:2, "abc":34, 2:"item", "d":"ch", "li":[1,2,3], "dic":{11:23}}	
 #print("imprimir diccionario")
 #print(d)
 
@@ -62,9 +62,12 @@ print(sorted(lista))
 #print(d["li"][1])
 
 #para pedir claves
-#print(d.keys())
-#print(d.values())
-#print(d.items())
+#print(d.keys()) para sacar las claves
+#print(d.values())  para sacar los valores
+#print(d.items())  para sacar ambos
+
+#borrar 
+#del.d["abc"]
 
 
 #SETS /------------------------ CONJUNTOS---Estos no llevna claves, solo valores
