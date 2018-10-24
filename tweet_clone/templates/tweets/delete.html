@@ -1,0 +1,11 @@
+<form method="post">
+	{% csrf_token %}
+	
+	<h3>Realmente desea borrar el Tweet: {{object.content}}</h3>
+	<small>TimeStamp: {{object.timestamp}} ago		
+	</small><br>
+
+	<button class="btn-danger" type="submit">Delete</button>
+
+
+</form>
