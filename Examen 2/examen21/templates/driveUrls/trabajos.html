@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+	
+	<div class="container">
+	<br>
+	<h1><strong>Investigaciones de {{categoriaid}}</strong> </h1><br>
+
+	<div class="list-group">
+	
+	{% for trabajo in archivosid %}
+
+		{% if trabajo.categoria == categoriaid %}
+			
+
+			<a href="{% url 'drive:investigacionView' trabajo.id %}" class="list-group-item list-group-item-action flex-column align-items-start active">
+    			<div class="d-flex w-100 justify-content-between">
+      				<h5 class="mb-1"><strong>{{trabajo.titulo}}</strong></h5>
+     				<small>{{trabajo.timestap}}</small>
+    			</div>
+    			<p class="mb-1">{{trabajo.autor}}</p>
+    			<small>{{trabajo.categoria}}</small>
+  			</a>
+  			<br>
+
+
+			 
+
+
+
+
+	    {% endif %}
+
+ 	{% endfor %} 
+ 	
+
+
+	</div>
+		<a href="{% url 'drive:categoriasView' %}" class="badge badge-success"> Regresar</a>
+
+	</div>	
+	
+
+{% endblock %}
+
+
+
+
+
+

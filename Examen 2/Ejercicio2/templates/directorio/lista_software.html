@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Directorio{% endblock %}
+
+{% block content %}
+	<div class="container">
+	<a href="{% url 'directorio:createSoftware_view' %}" class="badge badge-dark">Agregar Software</a>
+	<a href="{% url 'directorio:createDepartamento_view' %}" class="badge badge-dark">Crear Nuevo Departamento</a><br>
+		
+	<table class="table">
+	</thead>	
+	<thead class="thead-dark">
+		<tr>
+	      <th scope="col">#</th>
+	      <th scope="col">Nombre</th>
+	      <th scope="col">Función</th>
+	      <th scope="col">Departamento</th>
+	    </tr>
+	<thead>	
+	<tbody>
+		{% for i in object_list %}
+
+	    <tr>
+	      <th scope="row">SFW-T{{i.id}}</th>
+	      <td>{{i.nombre}}</td>
+	      <td>{{i.funcion}}</td>
+	      <td>{{i.departamento}}</td>
+	    </tr>
+
+	    {% endfor %}
+	
+	</tbody>    
+	</table>
+
+	
+	
+	</div>
+	
+
+	
+
+{% endblock %}
+
+

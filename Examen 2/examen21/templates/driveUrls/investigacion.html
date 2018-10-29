@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Investigacion{% endblock %}
+
+{% block content %}
+	
+
+
+<div class="container">
+	<div class="media">
+  	<div class="media-body">
+    <br>
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1"><strong>{{object.titulo}}</strong></h5>
+      <small>{{object.timestap}}</small>
+      </div>
+    <h3 class="mt-0"><strong>Titulo: {{object.titulo}}</strong></h3>
+    <h5 class="mt-0"><strong>Autor: {{object.autor}}</strong> </h5>
+    <br>
+    <h5>Contenido</h5>
+    {{object.contenido}} 
+  	</div>
+	</div>
+	<a href="{% url 'drive:trabajosView' object.categoria.id %}" class="badge badge-success"> Regresar</a>
+
+</div>
+{% endblock %}
