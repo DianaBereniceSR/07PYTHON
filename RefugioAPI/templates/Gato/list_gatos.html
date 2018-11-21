@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}List view{% endblock %}
+
+
+{% block script %}
+<script type="text/javascript">
+		
+	$(document).ready(function(){
+		//console.log("")
+	$.ajax({
+			url: "/api/list_gatos/",
+			method: "GET",
+			success: function(data){
+				//console.log(data)
+				$.each(data,function(key,value){
+					console.log(value)
+					var gatoKey=key
+					var gatoNombre=value.nombre
+					var gatoRaza=value.raza
+					var gatoGenero=value.genero
+					var gatoEdad=value.edad
+					//var gatoContent = value.content
+					$("#mascota-container").append("<li>Nombre: "+gatoNombre+"<br>Raza: "+gatoRaza+"<br>Genero: "+gatoGenero+"<br>Edad: "+gatoEdad+"</li><br>")
+					
+
+				
+
+				})
+			},
+			error: function(data){
+				console.log("error")
+				console.log(data)
+			}
+
+		})	
+	});	
+
+</script>
+{% endblock %}
+
+{% block content %}
+
+	
+	<div style="width: 40%; margin: 80px;">
+	<h1>GATOS</h1>
+
+		<ul style="margin-top: 10x; padding: 30px 10px; box-shadow:#999 3px 3px 10px; list-style: none; " id="mascota-container"">
+			
+		</ul>
+	</div>
+
+
+{% endblock %}
