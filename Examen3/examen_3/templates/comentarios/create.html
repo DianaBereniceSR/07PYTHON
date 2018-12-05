@@ -1,0 +1,24 @@
+
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<div class="container">
+<form method="POST">
+	{% csrf_token %}
+	<h1>CREAR </h1>
+
+	<input class="form-control" placeholder="Titulo de la Publicacion" type="text" name="titulo"><br>
+	<input class="form-control" placeholder="Nombre Completo del Autor" type="text" name="user" ><br>
+	
+	{{form.categoria}}<br><br>
+	<textarea class="form-control" placeholder="Nombre Completo del Autor" type="text" rows="5" name="contenido" ></textarea>
+	
+	<br>
+	<a class="btn btn-success" href="{% url 'comentarios:categorias_view' %}">Cancelar<a>
+	<input class="btn btn-success" type="submit" value="Crear">
+
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Entradas{% endblock %}
+
+{% block script %}
+
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="container-fluid" >
+<h1>Criticas {{categoria}}</h1><br>
+
+<div class="list-group" id="criticas">
+	
+	{% for critica in criticas %}
+
+		<div class="list-group">
+			{% if critica.categoria == categoria %}
+				<a href="{% url 'comentarios:detail_view' critica.id %}" class="list-group-item list-group-item-action flex-column align-items-start">
+				    <div class="d-flex w-100 justify-content-between">
+					      <h5 class="mb-1">{{critica.titulo}}</h5>
+					      <small>{{critica.timestap}}</small>
+				    </div>
+						   <small>{{critica.user}}</small>
+	  			</a>	
+  			{% endif %}
+		</div>	
+
+
+
+		<!--
+		{% if critica.categoria == categoria %}
+			 <a href="{% url 'comentarios:detail_view' critica.id %}" class="list-group-item list-group-item-action">
+		    {{critica.titulo}} | {{critica.user}}
+		 	 </a>
+	    {% endif %}
+		-->
+
+
+
+ 	{% endfor %} 
+ 	
+
+
+</div>
+	<a href="{% url 'comentarios:categorias_view' %}" class="badge badge-success"> Regresar</a>
+
+</div>	
+{% endblock %}

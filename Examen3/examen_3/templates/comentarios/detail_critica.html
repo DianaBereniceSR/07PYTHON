@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Detalles{% endblock %}
+
+{% block content %}
+	
+<div class="container" id="critica" style="padding: 10px; box-shadow: #999 0px 10px 10px; margin-top: 40px;">	
+
+	<div class="media">
+  	<div class="media-body">
+    <h3 class="mt-0"><strong>Titulo: {{object.titulo}}</strong> </h3>
+    {{object.user}}
+    <br>
+    <h5>Contenido</h5>
+    {{object.contenido}} 
+
+   
+
+    <p>Like: {{object.like.count}}</p>
+
+    
+  	</div>
+	</div>
+	<a href="{% url 'comentarios:categorias_view' %}" class="badge badge-success"> Regresar</a>
+
+
+
+
+</div>
+{% endblock %}

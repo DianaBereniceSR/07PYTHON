@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}Categorias{% endblock %}
+
+{% block script %}
+<script type="text/javascript">
+	
+$(document).ready(function(){
+
+	$("#categorias a").click(function(){
+		var url=$(this).attr("href");
+		$('#contenidos').load(url + " #criticas");
+		return false;
+	});
+
+	
+
+});
+
+</script>      
+
+
+{% endblock %}
+
+
+
+
+{% block content %}
+<div class="container">
+<h1>Categorias</h1><br>
+
+
+<div class="row">
+  <div class="col-sm-4">
+	  <div class="card text-white bg-success mb-3 " style="width: 18rem; box-shadow: #999 0px 10px 10px;">
+	  
+	  <div class="card-header">
+	    Categorias
+	  </div><!--HEADER-->
+
+		  <ul class="list-group list-group-flush " id="categorias">
+		   
+		   {% for categoria in object_list %}
+		    <a class="list-group-item list-group-item-action" href="{% url 'comentarios:criticas_view' categoria.id %}" style="width: 17em; margin: auto;" >{{categoria.categoria}}
+		    </a>
+		   {% endfor %}  
+
+		  </ul>
+		  <div class="card-footer bg-transparent borderlight"><a style="color: white; padding: 10px; border: 1px solid white;" class="card-link" id="crear" href="{% url 'comentarios:create_view' %}">Crear Entrada</a></div>
+	  </div><!--AQUI TERMINA LA CARTA-->
+
+  </div><!--AQUI TERMINA LA COLUMNA SM - 4-->
+
+
+
+  <div class="col-sm-8 cont-estilo" id="contenidos">
+  
+
+  			
+
+
+  </div><!--AQUI TERMINA LA COLUMNA SM -8
+
+
+</div><!--AQUI TERMINA LA FILA-->
+
+
+
+
+
+
+
+
+
+	
+	 
+	 
+
+ 	
+ 	 
+
+<br>
+
+
+
+</div>
+
+
+<a href=""></a>
+
+
+{% endblock %}
