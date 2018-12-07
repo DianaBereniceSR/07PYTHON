@@ -1,3 +1,7 @@
 <nav class="navbar navbar-light bg-light">
+  {% if user.is_authenticated %}
   <a style="background: #e1e1e1; padding: 10px; border-radius: 20px;" class="navbar-brand" href="{% url 'mascota:create_view' %}">Crear</a>
+
+  <a style="background: #e1e1e1; padding: 10px; border-radius: 20px;" class="navbar-brand" href="{% url 'mascota:logout' %}">Cerrar Sesion</a>
+  {% endif %}
 </nav>
